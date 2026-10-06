@@ -1,0 +1,20 @@
+/* The app's look: its blue, a soft wash at the top, rounded bold titles. */
+:root { --accent: #007aff; --text: #1c1c1e; --secondary: #6e6e73; --bg: #ffffff; --card: #f2f2f7; --wash: rgba(0, 122, 255, 0.10); }
+@media (prefers-color-scheme: dark) {
+  :root { --accent: #0a84ff; --text: #f2f2f7; --secondary: #a1a1a6; --bg: #000000; --card: #1c1c1e; --wash: rgba(10, 132, 255, 0.16); }
+}
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--text); background: linear-gradient(var(--wash), var(--bg) 420px) no-repeat, var(--bg);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 720px; margin: 0 auto; padding: 48px 16px 80px; }
+.brand { display: flex; align-items: center; gap: 12px; color: var(--secondary); font: 600 17px ui-rounded, -apple-system, sans-serif; text-decoration: none; }
+.brand img { width: 40px; height: 40px; border-radius: 9px; }
+h1, h2 { font-family: ui-rounded, -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; line-height: 1.15; }
+h1 { font-size: 40px; margin: 28px 0 8px; }
+h2 { font-size: 24px; margin: 36px 0 8px; }
+p, li { color: var(--text); }
+.lead, .date { color: var(--secondary); }
+a { color: var(--accent); }
+nav { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 20px; }
+.card { background: var(--card); border-radius: 16px; padding: 4px 20px; margin: 16px 0; }
+hr { border: 0; border-top: 1px solid var(--card); margin: 48px 0; }
