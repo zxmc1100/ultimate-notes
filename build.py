@@ -182,8 +182,10 @@ def page(t):
               "offers": {"@type": "Offer", "price": "0", "priceCurrency": t["currency"]}}
     ld_faq = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in t["faq"]]}
-    badge = (f'<a class="badge" href="{t["store"]}"><img src="https://tools.applemarketingtools.com/api/badges/'
-             f'download-on-the-app-store/black/{t["badge"]}?size=250x83" alt="{e(t["badge_alt"])}" width="156" height="52"></a>')
+    # Apple's official badges (toolbox.marketingtools.apple.com), kept here: black on light pages, white on dark.
+    badge = (f'<a class="badge" href="{t["store"]}"><picture>'
+             f'<source srcset="{up}img/app-store-white-{t["badge"]}.svg" media="(prefers-color-scheme: dark)">'
+             f'<img src="{up}img/app-store-black-{t["badge"]}.svg" alt="{e(t["badge_alt"])}" width="156" height="52"></picture></a>')
     nav = t["nav"]
 
     chapters = []
